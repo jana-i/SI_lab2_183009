@@ -28,33 +28,31 @@ class Angle {
 public class SILab2 {
 
     public List<Integer> function(List<Angle> angleList) {
-        List<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();//A
 
-        for (int i = 0; i < angleList.size(); i++) {
-            int deg = angleList.get(i).getDegrees();
-            int min = angleList.get(i).getMinutes();
-            int sec = angleList.get(i).getSeconds();
-            if (deg >= 0 && deg < 360) {
-                if (min < 0 || min > 59)
-                    throw new RuntimeException("The minutes of the angle are not valid!");
-                else {
-                    if (sec < 0 || sec > 59)
-                        throw new RuntimeException("The seconds of the angle are not valid");
-                    else
-                        result.add(deg * 3600 + min * 60 + sec);
+        for (int i = 0; i < angleList.size(); i++) {//B
+            int deg = angleList.get(i).getDegrees();//C
+            int min = angleList.get(i).getMinutes();//C
+            int sec = angleList.get(i).getSeconds();//C
+            if (deg >= 0 && deg < 360) {            //V
+                if (min < 0 || min > 59)//P
+                    throw new RuntimeException("The minutes of the angle are not valid!");//K
+                else {//F
+                    if (sec < 0 || sec > 59)//L
+                        throw new RuntimeException("The seconds of the angle are not valid");//H
+                    else //Q
+                        result.add(deg * 3600 + min * 60 + sec);//I
                 }
-            } else if (deg == 360) {
-                if (min == 0 && sec == 0)
-                    result.add(deg * 3600 + min * 60 + sec);
-                else
-                    throw new RuntimeException("The angle is greater then the maximum");
-            } else {
-                throw new RuntimeException("The angle is smaller or greater then the minimum");
+            } else if (deg == 360) {//J
+                if (min == 0 && sec == 0)//X
+                    result.add(deg * 3600 + min * 60 + sec);//Y
+                else //S
+                    throw new RuntimeException("The angle is greater then the maximum");//T
+            } else { //E
+                throw new RuntimeException("The angle is smaller or greater then the minimum");//R
             }
         }
-        return result;
+        return result;//M
 
     }
 }
-
-
